@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.8-slim
 
 LABEL "com.github.actions.name"="WP Engine Deployment"
 LABEL "com.github.actions.description"="Deploy code to WP Engine"
@@ -14,7 +14,7 @@ LABEL maintainer="Justin Waulters <justin.waulters@fueltravel.com>"
 # This is how to install something (AWS CLI for example).
 # RUN pip install --quiet --no-cache-dir awscli==${AWSCLI_VERSION}
 
-RUN yum update && yum install -y git
+RUN apt-get update && apt-get install -y git
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
