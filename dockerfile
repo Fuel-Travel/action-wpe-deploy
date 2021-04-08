@@ -10,10 +10,6 @@ LABEL repository="https://github.com/Fuel-Travel/action-wpe-deploy"
 LABEL homepage="https://https://www.fueltravel.com/"
 LABEL maintainer="Justin Waulters <justin.waulters@fueltravel.com>"
 
-# This docker image has python already installed, but we aren't using it yet.
-# This is how to install something (AWS CLI for example).
-# RUN pip install --quiet --no-cache-dir awscli==${AWSCLI_VERSION}
-
 RUN apt-get update && apt-get install -y git
 
 ADD entrypoint.sh /entrypoint.sh
