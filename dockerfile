@@ -14,7 +14,7 @@ LABEL maintainer="Justin Waulters <justin.waulters@fueltravel.com>"
 # This is how to install something (AWS CLI for example).
 # RUN pip install --quiet --no-cache-dir awscli==${AWSCLI_VERSION}
 
-RUN apt-get update && apt-get install -y git
+RUN yum update && yum install -y git
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
